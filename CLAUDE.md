@@ -21,7 +21,7 @@ No build, no server, no install. All game state is in-memory; high scores persis
 
 ## Git Workflow
 
-This repo is pushed to GitHub (`ezapakin-sudo/browser-games`). After every coding session, commit and push:
+This repo lives on GitHub at `ezapakin-sudo/browser-games`. **Commit and push after every meaningful change** — do not batch everything into one end-of-session commit. The goal is a clean history that makes it easy to revert any individual change.
 
 ```bash
 git add <changed files>
@@ -29,7 +29,16 @@ git commit -m "descriptive message"
 git push
 ```
 
-Write commit messages that describe what changed and why (e.g. `"shooter: add level 5+ scaling and strafe AI for shooter enemy"`), not just what files were touched.
+**Commit message rules:**
+- Prefix with the file/feature scope: `shooter:`, `tictactoe:`, `docs:`, etc.
+- Describe what changed and why, not which files: `"shooter: cap spawn interval at 0.45s so level 8+ stays playable"` not `"update shooter.html"`
+- One logical change per commit — if you add a feature and fix a bug, that's two commits
+
+**When to commit:**
+- After adding a new feature or mechanic
+- After fixing a bug
+- After any change that leaves the game in a working state
+- Before starting a risky refactor (snapshot the working state first)
 
 ## shooter.html Architecture
 
